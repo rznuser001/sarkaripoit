@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResultPoint - Latest Jobs, Results & Admit Cards</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#0f172a;
+    --secondary:#14b8a6;
+    --accent:#f59e0b;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --dark:#1e293b;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--light);
+    color:#333;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    background:var(--primary);
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:700;
+    color:var(--secondary);
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+nav ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--secondary);
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    opacity:.9;
+    margin-bottom:25px;
+}
+
+.search-box{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:10px 0 0 10px;
+    outline:none;
+}
+
+.search-box button{
+    border:none;
+    padding:16px 25px;
+    background:var(--secondary);
+    color:white;
+    cursor:pointer;
+    border-radius:0 10px 10px 0;
+}
+
+/* TRENDING */
+
+.trending{
+    background:var(--accent);
+    color:#000;
+    padding:12px;
+    font-weight:600;
+}
+
+/* QUICK BUTTONS */
+
+.quick-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin:30px 0;
+}
+
+.quick-links a{
+    background:var(--secondary);
+    color:white;
+    text-align:center;
+    padding:15px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.quick-links a:hover{
+    transform:translateY(-3px);
+}
+
+/* MAIN GRID */
+
+.main-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.card-title{
+    background:var(--primary);
+    color:white;
+    padding:15px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.card ul{
+    padding:20px;
+}
+
+.card li{
+    margin-bottom:12px;
+}
+
+.card li a:hover{
+    color:var(--secondary);
+}
+
+/* SECOND SECTION */
+
+.section-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+/* STATE JOBS */
+
+.state-jobs{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.state-jobs h2{
+    margin-bottom:20px;
+}
+
+.state-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
+}
+
+.state-list a{
+    background:#eef2ff;
+    padding:12px;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* IMPORTANT LINKS */
+
+.important-links{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:40px;
+}
+
+.links-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.links-grid a{
+    background:#f1f5f9;
+    padding:14px;
+    border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--primary);
+    color:white;
+    margin-top:40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    padding:50px 0;
+}
+
+.footer-grid h3{
+    margin-bottom:15px;
+}
+
+.footer-grid ul{
+    list-style:none;
+}
+
+.footer-grid li{
+    margin-bottom:10px;
+}
+
+.copyright{
+    text-align:center;
+    padding:15px;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.main-grid,
+.section-grid,
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.logo{
+    font-size:26px;
+}
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container topbar">
+
+<div class="logo">
+Result<span>Point</span>
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Latest Jobs</a></li>
+<li><a href="#">Results</a></li>
+<li><a href="#">Admit Card</a></li>
+<li><a href="#">Answer Key</a></li>
+<li><a href="#">Admissions</a></li>
+<li><a href="#">Scholarship</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<h1>Latest Government Jobs & Results</h1>
+<p>Find Jobs, Admit Cards, Results, Admissions and More</p>
+
+<div class="search-box">
+<input type="text" placeholder="Search Jobs, Results, Admit Cards...">
+<button>Search</button>
+</div>
+</section>
+
+<div class="trending">
+<marquee>
+?? SSC CGL Recruitment | Railway Vacancy | UP Police Recruitment |
+CTET Online Form | Bank Clerk Notification | New Government Jobs
+</marquee>
+</div>
+
+<div class="container">
+
+<div class="quick-links">
+<a href="#">Latest Jobs</a>
+<a href="#">Results</a>
+<a href="#">Admit Card</a>
+<a href="#">Answer Key</a>
+<a href="#">Admissions</a>
+<a href="#">Scholarships</a>
+</div>
+
+<div class="main-grid">
+
+<div class="card">
+<div class="card-title">Latest Jobs</div>
+<ul>
+<li><a href="#">SSC CGL Online Form 2026</a></li>
+<li><a href="#">Railway Technician Recruitment</a></li>
+<li><a href="#">UP Police Vacancy</a></li>
+<li><a href="#">Bank Clerk Recruitment</a></li>
+<li><a href="#">Army Agniveer Notification</a></li>
+<li><a href="#">Teacher Vacancy 2026</a></li>
+</ul>
+</div>
+
+<div class="card">
+<div class="card-title">Results</div>
+<ul>
+<li><a href="#">SSC GD Result</a></li>
+<li><a href="#">UP Board Result</a></li>
+<li><a href="#">CTET Result</a></li>
+<li><a href="#">Railway Result</a></li>
+<li><a href="#">Bank PO Result</a></li>
+<li><a href="#">Police Result</a></li>
+</ul>
+</div>
+
+<div class="card">
+<div class="card-title">Admit Cards</div>
+<ul>
+<li><a href="#">SSC Admit Card</a></li>
+<li><a href="#">UP Police Admit Card</a></li>
+<li><a href="#">Railway Admit Card</a></li>
+<li><a href="#">CTET Admit Card</a></li>
+<li><a href="#">NTA Exam Admit Card</a></li>
+<li><a href="#">Bank Exam Admit Card</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="section-grid">
+
+<div class="card">
+<div class="card-title">Answer Key</div>
+<ul>
+<li><a href="#">SSC Answer Key</a></li>
+<li><a href="#">Railway Answer Key</a></li>
+<li><a href="#">CTET Answer Key</a></li>
+<li><a href="#">Police Answer Key</a></li>
+</ul>
+</div>
+
+<div class="card">
+<div class="card-title">Admissions</div>
+<ul>
+<li><a href="#">University Admission</a></li>
+<li><a href="#">ITI Admission</a></li>
+<li><a href="#">Polytechnic Admission</a></li>
+<li><a href="#">B.Ed Admission</a></li>
+</ul>
+</div>
+
+<div class="card">
+<div class="card-title">Scholarships</div>
+<ul>
+<li><a href="#">UP Scholarship</a></li>
+<li><a href="#">NSP Scholarship</a></li>
+<li><a href="#">Post Matric Scholarship</a></li>
+<li><a href="#">Merit Scholarship</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="state-jobs">
+<h2>State Wise Jobs</h2>
+
+<div class="state-list">
+<a href="#">Uttar Pradesh</a>
+<a href="#">Bihar</a>
+<a href="#">Delhi</a>
+<a href="#">Rajasthan</a>
+<a href="#">Madhya Pradesh</a>
+<a href="#">Punjab</a>
+<a href="#">Haryana</a>
+<a href="#">Jharkhand</a>
+<a href="#">Maharashtra</a>
+<a href="#">Gujarat</a>
+</div>
+
+</div>
+
+<div class="important-links">
+<h2>Important Links</h2>
+
+<div class="links-grid">
+<a href="#">Aadhaar Card Services</a>
+<a href="#">PAN Card Services</a>
+<a href="#">Voter ID Services</a>
+<a href="#">Driving License</a>
+<a href="#">Passport Services</a>
+<a href="#">Government Schemes</a>
+<a href="#">Ration Card</a>
+<a href="#">Income Certificate</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+<h3>ResultPoint</h3>
+<p>
+Latest Jobs, Results, Admit Cards,
+Admissions and Scholarship Updates.
+</p>
+</div>
+
+<div>
+<h3>Important Pages</h3>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Disclaimer</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Categories</h3>
+<ul>
+<li><a href="#">Latest Jobs</a></li>
+<li><a href="#">Results</a></li>
+<li><a href="#">Admit Cards</a></li>
+<li><a href="#">Admissions</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Follow Us</h3>
+<ul>
+<li><a href="#">Telegram</a></li>
+<li><a href="#">WhatsApp Channel</a></li>
+<li><a href="#">YouTube</a></li>
+<li><a href="#">Facebook</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 ResultPoint. All Rights Reserved.
+</div>
+
+</footer>
+
+</body>
+</html>
